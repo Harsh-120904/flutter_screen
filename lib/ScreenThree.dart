@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screen/ScreenTwo.dart';
+import 'package:flutter_screen/apicall.dart';
 
 class screenthree extends StatelessWidget {
   const screenthree({Key? key}) : super(key: key);
@@ -197,10 +198,17 @@ class screenthree extends StatelessWidget {
               height: 60,
               child: ElevatedButton(onPressed: (){},
                   child: Center(
-                    child: Text("Apply",style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.w500,
-                    ),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                          return ApiCall();
+                        },));
+                      },
+                      child: Text("Apply",style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.w500,
+                      ),
+                      ),
                     ),
                   ),style: ButtonStyle(
                   backgroundColor: const MaterialStatePropertyAll(Colors.black),
